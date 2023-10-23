@@ -12,9 +12,9 @@ body{
 }
 .container{
 background-color: white;
-height: 499px;
+height: 459px;
 width: 517px;
-margin: 64px auto;
+margin: 74px auto;
 border-radius: 12px;
 padding: 12px;
 }
@@ -44,4 +44,52 @@ padding: 12px;
 .timer-div > p {
     margin-right: 12px;
     font-size: 21px;
+}
+#quiz-caintainer{
+    margin: 19px 10px;
+    height: 73%;
+    width: 96%;
+}
+.options{
+    margin: 10px;
+    font-size: 21px;
+}
+.opt-div{
+    margin: 19px;
+}
+.next-btn{
+    height: 35px;
+    width: 95px;
+    border-radius: 12px;
+    border: none;
+    font-size: 17px;
+    background-color: rgb(48, 48, 243);
+    color: white;
+    margin-top: 15px;
+    margin-left: 389px;
+    cursor: pointer;
+}
+.next-btn:disabled{
+    background-color: rgb(154, 154, 242);
+    cursor: auto ;
+}
+#score-div{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 65%;
+    width: 96%;
+}
+#score-div h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 159px;
+    width: 159px;
+    border-radius: 50%;
+border: 5px solid black;
+}
+.qusCout{
+    display: flex;
+    justify-content: space-between;
 }
