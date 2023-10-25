@@ -1,52 +1,52 @@
 const quizes = [
     {
-      que: 'What is the Capital of Pakistan?',
+      que: 'What is the Capital city of Pakistan?',
       options: ['Karachi', 'Lahore', 'Islamabad', 'Hyderabad'],
       correct: 'Islamabad'
     },
     {
-      que: 'What is the Capital of Pakistan?',
-      options: ['Karachi', 'Lahore', 'Islamabad', 'Hyderabad'],
-      correct: 'Islamabad'
+      que: 'What is the largest city of Pakistan?',
+      options: ['Islamabad', 'Karachi', 'Lahore', 'Faislabad'],
+      correct: 'Karachi'
     },
     {
-      que: 'What is the Capital of Pakistan?',
+      que: 'What city is financial capital of Pakistan?',
       options: ['Karachi', 'Lahore', 'Islamabad', 'Hyderabad'],
-      correct: 'Islamabad'
-    },
-    {
-      que: 'What is the Capital of Pakistan?',
-      options: ['Karachi', 'Lahore', 'Islamabad', 'Hyderabad'],
-      correct: 'Islamabad'
-    },
-    {
-      que: 'What is the Capital of Pakistan?',
-      options: ['Karachi', 'Lahore', 'Islamabad', 'Hyderabad'],
-      correct: 'Islamabad'
-    },
-    {
-      que: 'What is the Capital of Pakistan?',
-      options: ['Karachi', 'Lahore', 'Islamabad', 'Hyderabad'],
-      correct: 'Islamabad'
-    },
-    {
-      que: 'What is the Capital of Pakistan?',
-      options: ['Karachi', 'Lahore', 'Islamabad', 'Hyderabad'],
-      correct: 'Islamabad'
-    },
-    {
-      que: 'What is the Capital of Pakistan?',
-      options: ['Karachi', 'Lahore', 'Islamabad', 'Hyderabad'],
-      correct: 'Islamabad'
+      correct: 'Karachi'
     },{
-      que: 'What is the Capital of Pakistan?',
-      options: ['Karachi', 'Lahore', 'Islamabad', 'Hyderabad'],
-      correct: 'Islamabad'
+      que: 'Who is the first prime minister of Pakistan?',
+      options: ['Qaid-e-azam muhammad Ali jinnah', 'Liaquat Ali khan', 'Fatima jinnah', 'Allama Iqbal'],
+      correct: 'Liaquat Ali khan'
     },
     {
-      que: 'What is the Capital of Pakistan?',
-      options: ['Karachi', 'Lahore', 'Islamabad', 'Hyderabad'],
-      correct: 'Islamabad'
+      que: 'In which country K2 mountain located?',
+      options: ['India', 'Pakistan', 'Nepal', 'Sri lanka'],
+      correct: 'Pakistan'
+    },
+    {
+      que: 'Who is the atomic scientist of Pakistan?',
+      options: ['Dr. abdulsalam', 'Dr. samar mubarak', 'Dr. abdulkalam', 'Dr. abdulkadeer khan'],
+      correct: 'Dr. abdulkadeer khan'
+    },
+    {
+      que: 'Which mosque is the largest mosque of Pakistan?',
+      options: ['Faisal Masjid', 'Badshah-i-masjid', 'Laal masjid', 'Jinnah masjid'],
+      correct: 'Faisal Masjid'
+    },
+    {
+      que: 'What is the national food of Pakistan?',
+      options: ['Nihari', 'Koorma', 'Pulao', 'Biryani'],
+      correct: 'Biryani'
+    },
+    {
+      que: 'Which year Pakistan won the World`cup',
+      options: ['1996', '1992', '2001', '1988'],
+      correct: '1992'
+    },
+    {
+      que: 'Who is the Captain of Cricket team',
+      options: ['Shaheen afridi', 'Imam-u-haq', 'Babar azam', 'Muhammad rizwan'],
+      correct: 'Karachi'
     }
   ];
 
@@ -80,10 +80,13 @@ const quizes = [
       input.type = 'radio'
       input.name = 'quiz-opt'
       input.value = opt
+      input.disabled = false
+      input.className = 'inputs';
 
       input.addEventListener('change',function (){
         userChackValue = this.value
         nextBtn.disabled = false
+        
       })
 
       optDiv.appendChild(input)
@@ -128,20 +131,72 @@ const quizes = [
   function showResult (){
     let scoreDiv = document.getElementById("score-div");
     scoreDiv.style.display = 'flex';
+
     let scorePerZero = document.getElementById('score-per');
     scorePerZero.innerText = correctAns*10 
 
     let scoreCircle = document.getElementById('scoreCircle');
     scoreCircle.style.borderColor = correctAns >= wrongAns ? 'green' : 'red'
+    scoreCircle.style.color = correctAns >= wrongAns ? 'green' : 'red'
 
     let corAnsP = document.createElement('p');
     corAnsP.innerText = `${correctAns} Answer is Correct`
 
     let wroAnsP = document.createElement('p');
-    wroAnsP.innerText = `${wrongAns} Answer is Correct`
+    wroAnsP.innerText = `${wrongAns} Answer is Wrong`
 
     let qusCout = document.getElementsByClassName('qusCout');
 
     qusCout[0].appendChild(corAnsP)
     qusCout[0].appendChild(wroAnsP)
+    }
+
+    let minutes = 9;
+    let seconds = 59;
+
+    let secondsZero = document.getElementById('seconds');
+    let minutesZero = document.getElementById('minutes');
+
+    
+    let secondInterval = setInterval(() => {
+  secondsCountDown()
+}, 1000)
+
+let MiuntesInterval = setInterval(() => {
+  minutesCountDown()
+}, 59099)
+
+setTimeout(() => {
+  minutesCountDown()
+},1)
+
+setTimeout(() => {
+  secondsCountDown()
+},1)
+
+function minutesCountDown (){
+      
+  minutesZero.innerText = minutes
+  minutes--
+}
+
+    function secondsCountDown (){
+     if(seconds === 0){
+      seconds = 59
+     }
+     seconds = seconds < 10 ? '0' + seconds : seconds
+     secondsZero.innerText = seconds
+      
+      if(minutes === -1 && seconds === '01'){
+        clearInterval(MiuntesInterval)
+        clearInterval(secondInterval)
+        let inputs = document.getElementsByClassName('inputs');
+        for(let i = 0;i <inputs.length ; i++){
+        inputs[i].disabled = true;
+      }
+      quizCaintainer.style.display = 'none'
+      showResult()
+      secondsZero.innerText = '00'
+      }
+      seconds--;
     }
