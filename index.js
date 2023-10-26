@@ -26,7 +26,7 @@ const quizes = [
     {
       que: 'Who is the atomic scientist of Pakistan?',
       options: ['Dr. abdul salam', 'Dr. samar mubarak', 'Dr. abdul kalam', 'Dr. abdul kadeer khan'],
-      correct: 'Dr. abdulkadeer khan'
+      correct: 'Dr. abdul kadeer khan'
     },
     {
       que: 'Which mosque is the largest mosque of Pakistan?',
@@ -99,6 +99,7 @@ const quizes = [
     nextBtn.className = 'next-btn'
     nextBtn.disabled = true
     nextBtn.addEventListener('click',showQuizes)
+
     div.appendChild(nextBtn)
     
     quizCaintainer.appendChild(div)
@@ -107,12 +108,16 @@ const quizes = [
       presentQus.innerText =indexOfArr+1 ;
   }
   makeQuizes()
+  
+function abc (){
+  if(userChackValue === quizes[indexOfArr].correct){
+    correctAns++
+  }else;
+    wrongAns = quizes.length - correctAns
+}
+
   function showQuizes (){
-    if(userChackValue === quizes[indexOfArr].correct){
-      correctAns++
-    }else{
-      wrongAns++
-    }
+    abc()
     
     if(indexOfArr+1 < quizes.length){
       indexOfArr++
@@ -200,3 +205,4 @@ function minutesCountDown (){
       }
       seconds--;
     }
+   
