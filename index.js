@@ -25,7 +25,7 @@ const quizes = [
     },
     {
       que: 'Who is the atomic scientist of Pakistan?',
-      options: ['Dr. abdulsalam', 'Dr. samar mubarak', 'Dr. abdulkalam', 'Dr. abdulkadeer khan'],
+      options: ['Dr. abdul salam', 'Dr. samar mubarak', 'Dr. abdul kalam', 'Dr. abdul kadeer khan'],
       correct: 'Dr. abdulkadeer khan'
     },
     {
@@ -46,7 +46,7 @@ const quizes = [
     {
       que: 'Who is the Captain of Cricket team',
       options: ['Shaheen afridi', 'Imam-u-haq', 'Babar azam', 'Muhammad rizwan'],
-      correct: 'Karachi'
+      correct: 'Babar azam'
     }
   ];
 
