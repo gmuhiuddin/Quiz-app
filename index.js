@@ -130,6 +130,12 @@ function abc (){
            nextBtn[0].addEventListener('click',function () {
             quizCaintainer.style.display = 'none'
             showResult()
+            
+   if(quizCaintainer.style.display === 'none'){
+    clearInterval(MiuntesInterval)
+    clearInterval(secondInterval)
+console.log(quizCaintainer.style.display)
+   }
            })
     }
   }
@@ -169,7 +175,7 @@ function abc (){
 
 let MiuntesInterval = setInterval(() => {
   minutesCountDown()
-}, 59099)
+}, 60000)
 
 setTimeout(() => {
   minutesCountDown()
