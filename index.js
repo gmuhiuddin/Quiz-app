@@ -36,7 +36,7 @@ const quizes = [
   {
     que: 'What is the national food of Pakistan?',
     options: ['Nihari', 'Koorma', 'Pulao', 'Biryani'],
-    correct: 'Biryani'
+    correct: 'Nihari'
   },
   {
     que: 'Which year Pakistan won the World`cup',
