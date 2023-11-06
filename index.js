@@ -52,10 +52,9 @@ const quizes = [
 
 let indexOfArr = 0;
 let correctAns = 0;
-let wrongAns = 0;
+let wrongAns = quizes.length;
 let userChackValue = '';
 let quizCaintainer = document.getElementById('quiz-caintainer');
-
 let totalQusZero = document.getElementById('total-qus');
 totalQusZero.innerText = quizes.length;
 
@@ -111,9 +110,12 @@ makeQuizes()
 
 function abc() {
   if (userChackValue === quizes[indexOfArr].correct) {
-    correctAns++
-  } else;
-  wrongAns = quizes.length - correctAns
+    correctAns++;
+    console.log(correctAns)
+  } else{
+  wrongAns--;
+  console.log(wrongAns)
+  }
 }
 
 function showQuizes() {
@@ -138,17 +140,20 @@ function showQuizes() {
       }
     })
   }
-}
+};
+
 function showResult() {
+  let percentage = correctAns * 10 
+
   let scoreDiv = document.getElementById("score-div");
   scoreDiv.style.display = 'flex';
 
   let scorePerZero = document.getElementById('score-per');
-  scorePerZero.innerText = correctAns * 10
+  scorePerZero.innerText = percentage
 
   let scoreCircle = document.getElementById('scoreCircle');
-  scoreCircle.style.borderColor = correctAns >= wrongAns ? 'green' : 'red'
-  scoreCircle.style.color = correctAns >= wrongAns ? 'green' : 'red'
+  scoreCircle.style.borderColor = percentage >= 50 ? 'green' : 'red'
+  scoreCircle.style.color = percentage >= 50 ? 'green' : 'red'
 
   let corAnsP = document.createElement('p');
   corAnsP.innerText = `${correctAns} Answer is Correct`
@@ -175,7 +180,7 @@ let secondInterval = setInterval(() => {
 
 let MiuntesInterval = setInterval(() => {
   minutesCountDown()
-}, 60000)
+}, 59385)
 
 setTimeout(() => {
   minutesCountDown()
