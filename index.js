@@ -111,10 +111,8 @@ makeQuizes()
 function abc() {
   if (userChackValue === quizes[indexOfArr].correct) {
     correctAns++;
-    console.log(correctAns)
   } else{
   wrongAns--;
-  console.log(wrongAns)
   }
 }
 
