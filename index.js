@@ -51,7 +51,7 @@ const quizes = [
 ];
 
 let indexOfArr = 0;
-let correctAns = 0;
+let correctAns = quizes.length;
 let wrongAns = quizes.length;
 let userChackValue = '';
 let quizCaintainer = document.getElementById('quiz-caintainer');
@@ -110,10 +110,11 @@ makeQuizes()
 
 function abc() {
   if (userChackValue === quizes[indexOfArr].correct) {
-    correctAns++;
-  } else{
-  wrongAns--;
+    wrongAns--;
+  }else{
+    correctAns--;
   }
+  
 }
 
 function showQuizes() {
@@ -134,7 +135,6 @@ function showQuizes() {
       if (quizCaintainer.style.display === 'none') {
         clearInterval(MiuntesInterval)
         clearInterval(secondInterval)
-        console.log(quizCaintainer.style.display)
       }
     })
   }
@@ -157,6 +157,7 @@ function showResult() {
   corAnsP.innerText = `${correctAns} Answer is Correct`
 
   let wroAnsP = document.createElement('p');
+  console.log(wrongAns)
   wroAnsP.innerText = `${wrongAns} Answer is Wrong`
 
   let qusCout = document.getElementsByClassName('qusCout');
