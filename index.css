@@ -2,32 +2,38 @@
     font-family: 'poppins';
     src: url(Poppins-Medium.ttf);
 }
-*{
+
+* {
     margin: 0px;
     padding: 0px;
     font-family: 'poppins';
 }
-body{
+
+body {
     background-color: rgb(48, 48, 243);
 }
-.container{
-background-color: white;
-height: 459px;
-width: 517px;
-margin: 74px auto;
-border-radius: 12px;
-padding: 12px;
+
+.container {
+    background-color: white;
+    height: auto;
+    width: 517px;
+    margin: 74px auto;
+    border-radius: 12px;
+    padding: 12px;
 }
-.heading-div{
+
+.heading-div {
     display: flex;
     justify-content: space-between;
     margin: 21px 15px;
 }
-#p{
-    margin-top:7px ;
+
+#p {
+    margin-top: 7px;
     font-size: 21px;
 }
-.timer-div{
+
+.timer-div {
     height: 41px;
     width: 113px;
     border-radius: 21px;
@@ -36,28 +42,34 @@ padding: 12px;
     align-items: center;
     justify-content: space-between;
 }
-.timer-div > i {
+
+.timer-div>i {
     margin-left: 12px;
     color: rgb(23, 33, 237);
     font-size: 19px;
 }
-.timer-div > p {
+
+.timer-div>p {
     margin-right: 12px;
     font-size: 21px;
 }
-#quiz-caintainer{
+
+#quiz-caintainer {
     margin: 19px 10px;
     height: 73%;
     width: 96%;
 }
-.options{
+
+.options {
     margin: 10px;
     font-size: 21px;
 }
-.opt-div{
+
+.opt-div {
     margin: 19px;
 }
-.next-btn{
+
+.next-btn {
     height: 35px;
     width: 95px;
     border-radius: 12px;
@@ -69,27 +81,36 @@ padding: 12px;
     margin-left: 389px;
     cursor: pointer;
 }
-.next-btn:disabled{
+
+.next-btn:disabled {
     background-color: rgb(154, 154, 242);
-    cursor: auto ;
+    cursor: auto;
 }
-#score-div{
+
+#score-div {
     display: none;
     justify-content: center;
     align-items: center;
     height: 65%;
     width: 96%;
 }
-#score-div h1{
+
+#score-div h1 {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 159px;
     width: 159px;
     border-radius: 50%;
-border: 5px solid black;
+    border: 5px solid black;
 }
-.qusCout{
+
+.qusCout {
     display: flex;
     justify-content: space-between;
+}
+
+.inputs{
+    height: 17px;
+      width: 17px;  
 }
