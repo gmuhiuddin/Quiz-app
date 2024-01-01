@@ -6,11 +6,12 @@ function getQuestions(){
   fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple')
 .then(res => res.json())
 .then(res => {
+  res.results.map((element)=> {
   var randomNumber = Math.floor(Math.random() * 3);
 
-  res.results.map((element)=> {
-   element.options = [...element.incorrect_answers]
-   element.options.splice(randomNumber,0,element.correct_answer)
+   element.options = [...element.incorrect_answers];
+
+   element.options.splice(randomNumber,0,element.correct_answer);
   })
 
   quizes = res.results
